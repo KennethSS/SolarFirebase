@@ -1,0 +1,130 @@
+{
+  "project_info": {
+    "project_number": "757276342866",
+    "firebase_url": "https://solarfirebase.firebaseio.com",
+    "project_id": "solarfirebase",
+    "storage_bucket": "solarfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757276342866:android:a5184170cf6933ce",
+        "android_client_info": {
+          "package_name": "com.solar.basekotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757276342866-ff1c052n6u3v74k45hfopbflg2j10or1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.solar.basekotlin",
+            "certificate_hash": "0a3463dac86d53d12ad926ad269c98d37266151d"
+          }
+        },
+        {
+          "client_id": "757276342866-ncnngil37hmi7tkpvv3l7r278o1an4h3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcAB4VFa0KLL6hYkWAw3wNdl1wZhox8Ow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757276342866-sbap2vf8u25os4q0fe60euekaul3merc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757276342866:android:afed8bebed4a790e",
+        "android_client_info": {
+          "package_name": "com.solar.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757276342866-pc11a8lh9dne33ek8mlserrutpduodsu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.solar.firebase",
+            "certificate_hash": "c03f64f53924b2409c2a6c689a0aceace1926978"
+          }
+        },
+        {
+          "client_id": "757276342866-tk47gp91c423h9jmlodbcrk6e8ffnhlm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.solar.firebase",
+            "certificate_hash": "0a3463dac86d53d12ad926ad269c98d37266151d"
+          }
+        },
+        {
+          "client_id": "757276342866-ndrkhi8o8grskjsfp96slife0e29ds62.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.solar.firebase",
+            "certificate_hash": "00111569ce26a21872fb776e885e1dd5f581e161"
+          }
+        },
+        {
+          "client_id": "757276342866-ncnngil37hmi7tkpvv3l7r278o1an4h3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcAB4VFa0KLL6hYkWAw3wNdl1wZhox8Ow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757276342866-sbap2vf8u25os4q0fe60euekaul3merc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757276342866:android:eed3e4d0611e06f7",
+        "android_client_info": {
+          "package_name": "com.solar.utility"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757276342866-ncnngil37hmi7tkpvv3l7r278o1an4h3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcAB4VFa0KLL6hYkWAw3wNdl1wZhox8Ow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757276342866-sbap2vf8u25os4q0fe60euekaul3merc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

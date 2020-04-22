@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SolarFireBase</string>
+
+    <string name="facebook_application_id" translatable="false">110400200411384</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb110400200411384</string>
+    <string name="facebook_app_id" translatable="false">110400200411384</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb110400200411384</string>
+
+    <!-- Login -->
+    <string name="no_register">아직 회원이 아니신가요? 지금 바로 가입해보세요</string>
+</resources>

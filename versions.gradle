@@ -1,0 +1,80 @@
+ext.deps = [:]
+
+def versions = [:]
+versions.androidx = '1.0.0'
+versions.arch = '2.1.0'
+versions.gms = '17.0.0'
+versions.firebase = '11.8.0'
+versions.kakao = '1.17.0'
+versions.koin = '2.0.1'
+versions.anko = '0.10.8'
+versions.glide = '4.9.0'
+
+def androidx = [:]
+androidx.legacy_v4 = "androidx.legacy:legacy-support-v4:$versions.androidx"
+androidx.legacy_v13 = "androidx.appcompat:appcompat:$versions.androidx"
+androidx.appcompat = "androidx.palette:palette:$versions.androidx"
+androidx.palette = "androidx.cardview:cardview:$versions.androidx"
+androidx.cardview = "androidx.recyclerview:recyclerview:$versions.androidx"
+androidx.recyclerview = "androidx.legacy:legacy-support-v13:$versions.androidx"
+deps.androidx = androidx
+
+def arch = [:]
+arch.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.arch"
+arch.reactivestreams = "androidx.lifecycle:lifecycle-reactivestreams:$versions.arch"
+arch.common = "androidx.lifecycle:lifecycle-common-java8:$versions.arch"
+arch.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.arch"
+deps.arch = arch
+
+def gms = [:]
+gms.analytics = "com.google.android.gms:play-services-analytics:$versions.gms"
+gms.location = "com.google.android.gms:play-services-location:$versions.gms"
+gms.maps = "com.google.android.gms:play-services-maps:$versions.gms"
+gms.panorama = "com.google.android.gms:play-services-panorama:$versions.gms"
+deps.gms = gms
+
+def firebase = [:]
+firebase.core = 'com.google.firebase:firebase-core:17.0.1'
+firebase.database = 'com.google.firebase:firebase-database:18.0.0'
+//firebase.crash = "com.google.firebase:firebase-crash:$versions.firebase"
+firebase.dynamiclink = 'com.google.firebase:firebase-dynamic-links:18.0.0'
+firebase.auth = "com.google.firebase:firebase-auth:19.0.0"
+firebase.gmsauth = "com.google.android.gms:play-services-auth:17.0.0"
+firebase.config = 'com.google.firebase:firebase-config:18.0.0'
+firebase.appindexing = 'com.google.firebase:firebase-appindexing:18.0.0'
+firebase.perf = 'com.google.firebase:firebase-perf:18.0.0'
+firebase.messaging = 'com.google.firebase:firebase-messaging:20.0.0'
+firebase.analytics = 'com.google.firebase:firebase-analytics:17.2.3'
+firebase.perf = 'com.google.firebase:firebase-perf:18.0.1'
+deps.firebase = firebase
+
+def kakao = [:]
+kakao.kakaolink = "com.kakao.sdk:kakaolink:$versions.kakao"
+kakao.kakaostory = "com.kakao.sdk:kakaostory:$versions.kakao"
+kakao.kakaotalk = "com.kakao.sdk:kakaotalk:$versions.kakao"
+kakao.usermgmt = "com.kakao.sdk:usermgmt:$versions.kakao"
+deps.kakao = kakao
+
+def facebook = [:]
+facebook.android = 'com.facebook.android:facebook-android-sdk:5.5.1'
+facebook.rebound = 'com.facebook.rebound:rebound:0.3.8'
+facebook.stetho = 'com.facebook.stetho:stetho-okhttp3:1.5.1'
+deps.facebook = facebook
+
+def koin = [:]
+koin.koin = "org.koin:koin-android:$versions.koin"
+koin.scope = "org.koin:koin-androidx-scope:$versions.koin"
+koin.viewmodel = "org.koin:koin-androidx-viewmodel:$versions.koin"
+koin.ext = "org.koin:koin-androidx-ext:$versions.koin"
+deps.koin = koin
+
+def anko = [:]
+anko.common = "org.jetbrains.anko:anko-commons:$versions.anko"
+deps.anko = anko
+
+def glide = [:]
+glide.glide = "com.github.bumptech.glide:glide:$versions.glide"
+glide.annotations = "com.github.bumptech.glide:annotations:$versions.glide"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+
+deps.glide = glide
