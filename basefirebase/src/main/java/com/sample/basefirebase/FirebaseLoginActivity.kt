@@ -13,11 +13,19 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
-abstract class FirebaseLoginActivity : FirebaseActivity(){
+abstract class FirebaseLoginActivity(
+        var resultListener: (LoginResult) -> Unit = { result: LoginResult -> }
+) : FirebaseActivity(){
     private val TAG = "FirebaseLoginActivity"
 
     private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
     private val facebookCallbackManager: CallbackManager = CallbackManager.Factory.create()
+    
+    enum class LoginResult {
+        SUCCESS,
+        FAILED
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +47,7 @@ abstract class FirebaseLoginActivity : FirebaseActivity(){
                     // Google Sign In was successful, authenticate with Firebase
                     val account = task.getResult(ApiException::class.java)
                     firebaseAuthWithGoogle(account!!)
+                    resultListener(LoginResult.SUCCESS)
                 } catch (e: ApiException) {
 
                 }
