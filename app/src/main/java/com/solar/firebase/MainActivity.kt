@@ -7,6 +7,7 @@ import android.util.Log
 
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.iid.FirebaseInstanceId
+import com.solar.firebase.database.CommentActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         location.setOnClickListener { startActivity(Intent(this, LocationActivity::class.java)) }
         view_pager.setOnClickListener {
             startActivity(Intent(this, SelectActivity::class.java))
+        }
+
+        firebase_database_list.setOnClickListener {
+            startActivity(Intent(this, CommentActivity::class.java))
         }
     }
 }

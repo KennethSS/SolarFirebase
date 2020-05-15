@@ -24,6 +24,7 @@
         </activity>
 
         <activity android:name=".LoginActivity"/>
+        <activity android:name=".database.CommentActivity"/>
         <service
             android:name=".MyFireBaseMessagingService">
             <intent-filter>

@@ -36,5 +36,12 @@
             android:layout_height="48dp"
             android:gravity="center"
             android:text="Location"/>
+
+        <TextView
+            android:id="@+id/firebase_database_list"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="FireBaseDatabaseList"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

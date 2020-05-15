@@ -13,6 +13,15 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
+/**
+ *  app/google-service.json
+ *
+ *  1. Google
+ *  - implementation 'com.google.android.gms:play-services-auth:18.0.0'
+ *  - implementation 'com.firebaseui:firebase-ui-auth:4.3.1'
+ *  - apply plugin: 'com.google.gms.google-services'
+ *
+ */
 abstract class FirebaseLoginActivity(
         var resultListener: (LoginResult) -> Unit = { result: LoginResult -> }
 ) : FirebaseActivity(){
@@ -20,7 +29,7 @@ abstract class FirebaseLoginActivity(
 
     private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
     private val facebookCallbackManager: CallbackManager = CallbackManager.Factory.create()
-    
+
     enum class LoginResult {
         SUCCESS,
         FAILED
