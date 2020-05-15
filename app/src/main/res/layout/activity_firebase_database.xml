@@ -11,11 +11,33 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/comment_img"
+            android:layout_width="300dp"
+            android:layout_height="300dp"/>
+
         <Button
             android:id="@+id/push"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="push"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/get_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="getImage"/>
+            <Button
+                android:id="@+id/upload_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="upload"/>
+        </LinearLayout>
+
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
