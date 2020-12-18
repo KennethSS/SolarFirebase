@@ -62,7 +62,7 @@ abstract class AbstractFirebaseAuthActivity : FirebaseActivity(){
                 try {
                     // Google Sign In was successful, authenticate with Firebase
                     val account = task.getResult(ApiException::class.java)
-                    firebaseAuthWithGoogle(account!!)
+                    firebaseAuthWithGoogle(account)
                 } catch (e: ApiException) {
                     onFailed(e.statusCode, e.message?:"ApiException")
                 }
@@ -104,7 +104,7 @@ abstract class AbstractFirebaseAuthActivity : FirebaseActivity(){
                         val user = auth.currentUser
                         //updateUI(user)
                         if (user != null) {
-                            onSuccess(mapCurrentUserToFirebaseAuthModel(user))
+                            onSuccess(mapCurrentUserToFirebaseAuthModel(user, token.token))
                         }
                     } else {
                         // If sign in fails, display a message to the user.
@@ -142,8 +142,8 @@ abstract class AbstractFirebaseAuthActivity : FirebaseActivity(){
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
-    private fun mapCurrentUserToFirebaseAuthModel(user: FirebaseUser): FirebaseAuthModel =
-            FirebaseAuthModel(user.uid, user.email, user.displayName, user.photoUrl.toString())
+    private fun mapCurrentUserToFirebaseAuthModel(user: FirebaseUser, token: String?): FirebaseAuthModel =
+            FirebaseAuthModel(user.uid, token, user.email, user.displayName, user.photoUrl.toString())
 
 
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
@@ -153,7 +153,7 @@ abstract class AbstractFirebaseAuthActivity : FirebaseActivity(){
                     if (task.isSuccessful) {
                         val currentUser = auth.currentUser
                         if (currentUser != null) {
-                            onSuccess(mapCurrentUserToFirebaseAuthModel(currentUser))
+                            onSuccess(mapCurrentUserToFirebaseAuthModel(currentUser, acct.idToken))
 
                             Log.d(TAG, "uid = " + currentUser.uid)
                             Log.d(TAG, "email = " + currentUser.email)

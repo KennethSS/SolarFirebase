@@ -5,6 +5,7 @@ package com.sample.basefirebase.auth
  */
 data class FirebaseAuthModel(
         val uid: String,
+        val token: String?,
         val email: String?,
         val nickname: String?,
         val photoUrl: String?
