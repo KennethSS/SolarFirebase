@@ -46,6 +46,7 @@ firebase.perf = 'com.google.firebase:firebase-perf:18.0.0'
 firebase.messaging = 'com.google.firebase:firebase-messaging:20.0.0'
 firebase.analytics = 'com.google.firebase:firebase-analytics:17.2.3'
 firebase.perf = 'com.google.firebase:firebase-perf:18.0.1'
+
 deps.firebase = firebase
 
 def kakao = [:]

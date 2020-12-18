@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.solar.firebase">
 
-
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -16,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".BaseApplication">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,8 +72,7 @@
 
         <activity android:name=".LocationActivity"/>
         <activity android:name=".SelectActivity"/>
-
-
+        <activity android:name=".AuthActivity"/>
 
         <!-- 인스턴스 ID 자동생성 방지-->
         <!--<meta-data
