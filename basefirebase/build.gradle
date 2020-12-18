@@ -35,10 +35,13 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
 
     // Firebase
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:26.1.1')
     implementation 'com.google.firebase:firebase-database:19.3.0'
     implementation 'com.google.firebase:firebase-storage:19.1.1'
-    implementation 'com.google.firebase:firebase-auth:19.3.1'
     implementation "com.google.firebase:firebase-firestore:21.7.1"
+
+    implementation 'com.google.firebase:firebase-auth-ktx'
 
     // Firebase UI
     implementation 'com.firebaseui:firebase-ui-auth:4.3.1'

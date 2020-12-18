@@ -16,7 +16,10 @@ class LoginActivity : AbstractFirebaseAuthActivity() {
 
     override fun onSuccess(data: FirebaseAuthModel) { }
 
-    override fun onFailed() { }
+    override fun onFailed(code: Int, message: String) {
+
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

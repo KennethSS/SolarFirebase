@@ -3,7 +3,6 @@ package com.solar.firebase.analytics
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import com.google.android.gms.measurement.module.Analytics
 import com.google.firebase.analytics.FirebaseAnalytics
 
 class FirebaseAnalyticsSdk : AnalyticsSdk {

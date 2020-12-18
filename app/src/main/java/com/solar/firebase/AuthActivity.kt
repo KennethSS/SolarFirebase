@@ -31,7 +31,7 @@ class AuthActivity : AbstractFirebaseAuthActivity() {
         uid.text = data.uid
     }
 
-    override fun onFailed() {
+    override fun onFailed(code: Int, message: String) {
 
     }
 }
