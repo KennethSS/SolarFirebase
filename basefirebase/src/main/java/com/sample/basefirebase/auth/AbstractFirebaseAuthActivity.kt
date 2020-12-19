@@ -62,7 +62,11 @@ abstract class AbstractFirebaseAuthActivity : FirebaseActivity(){
                 try {
                     // Google Sign In was successful, authenticate with Firebase
                     val account = task.getResult(ApiException::class.java)
-                    firebaseAuthWithGoogle(account)
+
+                    if (account != null) {
+                        firebaseAuthWithGoogle(account)
+                    }
+
                 } catch (e: ApiException) {
                     onFailed(e.statusCode, e.message?:"ApiException")
                 }
