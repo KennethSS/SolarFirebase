@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
 import com.sample.basefirebase.database.FirebaseDatabaseManager
-import com.sample.basefirebase.database.FirebaseStorageManager
+import com.sample.basefirebase.storage.FirebaseStorageManager
 import com.sample.basefirebase.database.recyclerview.FirebaseRecyclerViewAdapter
 import com.solar.firebase.R
 import com.solar.firebase.database.entity.comment.Comment
@@ -25,15 +25,17 @@ import com.zhihu.matisse.Matisse
 import com.zhihu.matisse.MimeType
 import com.zhihu.matisse.engine.impl.GlideEngine
 import kotlinx.android.synthetic.main.activity_firebase_database.*
-import kotlinx.android.synthetic.main.item_comment.*
 import kotlinx.android.synthetic.main.item_comment.view.*
 
 class CommentActivity : BaseActivity() {
     var adapter: FirebaseRecyclerAdapter<Comment, CommentViewHolder>? = null
+
     private var uri: Uri? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_firebase_database)
+
 
         push.setOnClickListener {
             showProgress()
@@ -46,10 +48,12 @@ class CommentActivity : BaseActivity() {
         upload_img.setOnClickListener {
             uri?.let {
                 showProgress()
-                FirebaseStorageManager.upload("test", it) {
+                FirebaseStorageManager.upload("test", it,  {
                     Log.d("CommentActivity", it.toString())
                     dismissProgress()
-                }
+                }, {
+
+                })
             }
 
         }

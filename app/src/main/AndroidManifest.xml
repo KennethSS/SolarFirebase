@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:allowBackup="true"
@@ -72,7 +73,10 @@
 
         <activity android:name=".LocationActivity"/>
         <activity android:name=".SelectActivity"/>
-        <activity android:name=".AuthActivity"/>
+        <activity android:name=".auth.AuthActivity"/>
+        <activity android:name=".storage.StorageActivity"/>
+
+        <service android:name=".storage.FileUploadService"/>
 
         <!-- 인스턴스 ID 자동생성 방지-->
         <!--<meta-data

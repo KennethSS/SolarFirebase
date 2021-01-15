@@ -1,10 +1,11 @@
-package com.solar.firebase
+package com.solar.firebase.auth
 
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.sample.basefirebase.auth.AbstractFirebaseAuthActivity
 import com.sample.basefirebase.auth.FirebaseAuthModel
 import com.sample.basefirebase.auth.FirebaseAuthType
+import com.solar.firebase.R
 import kotlinx.android.synthetic.main.activity_auth.*
 import kotlinx.android.synthetic.main.activity_login.btn_login_facebook
 import kotlinx.android.synthetic.main.activity_login.btn_login_google

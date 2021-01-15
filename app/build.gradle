@@ -27,8 +27,8 @@ android {
         jvmTarget = "1.8"
     }
 
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
     }
 }
 
@@ -47,10 +47,13 @@ dependencies {
     implementation 'com.google.android.gms:play-services-places:17.0.0'
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
     implementation 'com.google.android.material:material:1.1.0'
-    implementation 'com.google.firebase:firebase-storage:19.2.0'
+
 
     implementation deps.gms.location
-    
+
+    implementation platform('com.google.firebase:firebase-bom:26.1.0')
+    implementation 'com.google.firebase:firebase-storage-ktx'
+
     implementation deps.firebase.core
     implementation deps.firebase.auth
     implementation deps.firebase.gmsauth
@@ -76,6 +79,8 @@ dependencies {
     implementation 'gun0912.ted:tedpermission:2.2.3'
 
     implementation project(':basefirebase')
+
+    implementation 'com.github.KennethSS:SolarBinding:1.0.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
