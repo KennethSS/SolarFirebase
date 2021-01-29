@@ -15,29 +15,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".BaseApplication">
+        android:name=".presentation.BaseApplication">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".presentation.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".presentation.LoginActivity"/>
         <activity android:name=".database.CommentActivity"/>
         <service
-            android:name=".MyFireBaseMessagingService">
+            android:name=".fcm.AppFirebaseMessagingService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
-        <service
+<!--        <service
             android:name=".MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
-        </service>
+        </service>-->
 
         <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
      See README(https://goo.gl/l4GJaQ) for more. -->
@@ -71,8 +72,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LocationActivity"/>
-        <activity android:name=".SelectActivity"/>
+        <activity android:name=".presentation.LocationActivity"/>
+        <activity android:name=".presentation.SelectActivity"/>
         <activity android:name=".auth.AuthActivity"/>
         <activity android:name=".storage.StorageActivity"/>
 

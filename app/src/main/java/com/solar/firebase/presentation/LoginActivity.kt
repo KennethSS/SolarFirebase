@@ -1,4 +1,4 @@
-package com.solar.firebase
+package com.solar.firebase.presentation
 
 import android.os.Bundle
 import com.facebook.CallbackManager
@@ -6,6 +6,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.sample.basefirebase.auth.AbstractFirebaseAuthActivity
 import com.sample.basefirebase.auth.FirebaseAuthModel
 import com.sample.basefirebase.auth.FirebaseAuthType
+import com.solar.firebase.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AbstractFirebaseAuthActivity() {

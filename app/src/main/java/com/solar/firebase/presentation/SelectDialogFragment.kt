@@ -1,11 +1,11 @@
-package com.solar.firebase
+package com.solar.firebase.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.android.synthetic.main.dialog_pop_shop_category_select.view.*
+import com.solar.firebase.R
 
 class SelectDialogFragment : BottomSheetDialogFragment() {
 

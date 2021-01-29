@@ -2,20 +2,14 @@ package com.solar.firebase.storage
 
 import android.Manifest
 import android.app.Activity
-import android.app.Notification
-import android.app.PendingIntent
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
 import com.bumptech.glide.Glide
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
-import com.sample.basefirebase.storage.FirebaseStorageManager
 import com.sample.basefirebase.storage.image.setStorageImage
-import com.solar.firebase.MainActivity
 import com.solar.firebase.R
 import com.solar.firebase.databinding.ActivityStorageBinding
 import com.solar.library.binding.activity.BindingActivity

@@ -1,4 +1,4 @@
-package com.solar.firebase
+package com.solar.firebase.presentation
 
 import android.view.View
 import androidx.fragment.app.Fragment

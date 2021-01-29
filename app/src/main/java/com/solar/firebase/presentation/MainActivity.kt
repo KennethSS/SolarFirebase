@@ -1,8 +1,9 @@
-package com.solar.firebase
+package com.solar.firebase.presentation
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.solar.firebase.R
 
 import com.solar.firebase.auth.AuthActivity
 import com.solar.firebase.database.CommentActivity

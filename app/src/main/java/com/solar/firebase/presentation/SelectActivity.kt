@@ -1,7 +1,8 @@
-package com.solar.firebase
+package com.solar.firebase.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.solar.firebase.R
 import kotlinx.android.synthetic.main.dialog_pop_shop_category_select.*
 
 class SelectActivity : AppCompatActivity() {

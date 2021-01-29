@@ -1,3 +1,4 @@
+/*
 package com.solar.firebase;
 
 import android.app.NotificationChannel;
@@ -14,6 +15,7 @@ import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.solar.firebase.presentation.MainActivity;
 
 public class MyFireBaseMessagingService extends FirebaseMessagingService {
     private static final String TAG = "MyFirebaseMsgService";
@@ -22,9 +24,11 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
         super();
     }
 
-    /**
+    */
+/**
      * Handle time allotted to BroadcastReceivers.
-     */
+     *//*
+
     private void handleNow() {
         Log.d(TAG, "Short lived task is done.");
     }
@@ -32,7 +36,9 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
     private void sendNotification(String messageBody) {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 */
+/* Request code *//*
+, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 
         String channelId = "SongChannelId";//getString(R.string.default_notification_channel_id);
@@ -57,7 +63,9 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
             notificationManager.createNotificationChannel(channel);
         }
 
-        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+        notificationManager.notify(0 */
+/* ID of notification *//*
+, notificationBuilder.build());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -73,7 +81,9 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
         if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
 
-            if (/* Check if data needs to be processed by long running job */ true) {
+            if (*/
+/* Check if data needs to be processed by long running job *//*
+ true) {
                 // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
             } else {
 
@@ -88,7 +98,8 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
             sendNotification(remoteMessage.getNotification().getBody());
         }
 
-        /*Notification.Builder builder = new Notification.Builder(this, "channel_id")
+        */
+/*Notification.Builder builder = new Notification.Builder(this, "channel_id")
                 .setContentTitle("채널타이틀")
                 .setContentText("채널바디")
                 .setSmallIcon(R.mipmap.ic_launcher_round)
@@ -107,7 +118,8 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
             channelMessage.setVibrationPattern(new long[]{100, 200, 100, 200});
             channelMessage.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
             notificationManager.createNotificationChannel(channelMessage);
-        }*/
+        }*//*
+
 
     }
 
@@ -126,3 +138,4 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
         super.onSendError(s, e);
     }
 }
+*/

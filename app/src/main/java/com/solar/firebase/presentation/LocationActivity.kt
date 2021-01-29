@@ -1,6 +1,5 @@
-package com.solar.firebase
+package com.solar.firebase.presentation
 
-import android.content.Context
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
@@ -8,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.google.android.gms.location.LocationServices
+import com.solar.firebase.LocationController
+import com.solar.firebase.R
 import kotlinx.android.synthetic.main.activity_location.*
 
 class LocationActivity : AppCompatActivity() {
@@ -25,7 +26,7 @@ class LocationActivity : AppCompatActivity() {
         })
         val locationController = LocationController(
                 this,
-                getSystemService(Context.LOCATION_SERVICE) as LocationManager,
+                getSystemService(LOCATION_SERVICE) as LocationManager,
                 LocationServices.getFusedLocationProviderClient(this),
                 locationObserver
         )

@@ -1,4 +1,4 @@
-package com.solar.firebase;
+package com.solar.firebase.presentation;
 
 import android.app.Application;
 import android.app.Notification;
