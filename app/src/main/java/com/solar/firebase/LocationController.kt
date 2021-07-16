@@ -42,7 +42,7 @@ class LocationController(
 
     fun getLocation() {
         if (isGrantedPermission()) {
-            fusedLocationClient.lastLocation
+            /*fusedLocationClient.lastLocation
                     .addOnFailureListener {
                         Log.d("getLocation", "failure " + it.message)
                     }
@@ -60,17 +60,22 @@ class LocationController(
                             Log.d("getLocation", "location is not null")
                             observe.value = location
                         }
-                    }
+                    }*/
         }
     }
 
     private val locationListener: LocationListener = object: LocationListener {
-        override fun onLocationChanged(location: Location?) {
+        /*override fun onLocationChanged(location: Location?) {
             location?.let { observe.value = it }
+        }*/
+
+        override fun onLocationChanged(location: Location) {
+
         }
-        override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {}
+
+        /*override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {}
         override fun onProviderEnabled(p0: String?) {}
-        override fun onProviderDisabled(p0: String?) {}
+        override fun onProviderDisabled(p0: String?) {}*/
     }
 
     private val locationRequest: LocationRequest = LocationRequest.create().apply {
@@ -89,7 +94,7 @@ class LocationController(
                 observe.value = locationResult.locations[0]
             } else {
                 Log.d("onLocationResult", "locationResult.locations.size < 0")
-                getLocationFromLocationManager()
+                //getLocationFromLocationManager()
             }
         }
 
@@ -121,9 +126,9 @@ class LocationController(
     }
 
     private fun startLocationUpdates() {
-        fusedLocationClient.requestLocationUpdates(
+        /*fusedLocationClient.requestLocationUpdates(
                 locationRequest,
                 locationCallback,
-                null /* Looper */)
+                null *//* Looper *//*)*/
     }
 }

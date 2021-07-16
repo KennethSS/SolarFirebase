@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.solar.firebase.R
 
 import com.solar.firebase.auth.AuthActivity
+import com.solar.firebase.crashlytics.CrashlyticsActivity
 import com.solar.firebase.database.CommentActivity
 import com.solar.firebase.storage.StorageActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -34,6 +35,10 @@ class MainActivity : AppCompatActivity() {
 
         view_pager.setOnClickListener {
             startActivity(Intent(this, SelectActivity::class.java))
+        }
+
+        crashlytics.setOnClickListener {
+            startActivity(Intent(this, CrashlyticsActivity::class.java))
         }
     }
 }

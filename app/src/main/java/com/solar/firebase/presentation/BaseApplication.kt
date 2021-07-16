@@ -1,30 +1,20 @@
-package com.solar.firebase.presentation;
+package com.solar.firebase.presentation
 
-import android.app.Application;
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationChannelGroup;
-import android.app.NotificationManager;
-import android.content.Context;
-import android.graphics.Color;
-import android.os.Build;
+import android.app.Application
+import com.google.firebase.FirebaseApp
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.google.firebase.messaging.FirebaseMessaging
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.messaging.FirebaseMessaging;
+class BaseApplication : Application() {
+  override fun onCreate() {
+    super.onCreate()
+    FirebaseApp.initializeApp(this)
+    FirebaseMessaging.getInstance().isAutoInitEnabled = true
+    FirebaseMessaging.getInstance().subscribeToTopic("ABC123")
 
-public class BaseApplication extends Application {
+    //주제 취소
+    //FirebaseMessaging.getInstance().unsubscribeFromTopic("주제1");
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        FirebaseApp.initializeApp(this);
-
-        FirebaseMessaging.getInstance().setAutoInitEnabled(true);
-        FirebaseMessaging.getInstance().subscribeToTopic("ABC123");
-
-
-
-        //주제 취소
-        //FirebaseMessaging.getInstance().unsubscribeFromTopic("주제1");
-    }
+    FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true)
+  }
 }
