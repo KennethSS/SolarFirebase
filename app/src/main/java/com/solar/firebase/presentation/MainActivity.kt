@@ -3,6 +3,7 @@ package com.solar.firebase.presentation
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.solar.firebase.FireStoreActivity
 import com.solar.firebase.R
 
 import com.solar.firebase.auth.AuthActivity
@@ -25,11 +26,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, CommentActivity::class.java))
         }
 
+        firebase_fire_store.setOnClickListener {
+            startActivity(Intent(this, FireStoreActivity::class.java))
+        }
+
         firebase_storage.setOnClickListener {
             startActivity(Intent(this, StorageActivity::class.java))
         }
-
-
 
         location.setOnClickListener { startActivity(Intent(this, LocationActivity::class.java)) }
 

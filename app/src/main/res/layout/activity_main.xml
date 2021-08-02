@@ -32,6 +32,13 @@
             android:text="Firebase Database"/>
 
         <TextView
+          android:id="@+id/firebase_fire_store"
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          android:gravity="center"
+          android:text="Firebase FireStore"/>
+
+        <TextView
             android:id="@+id/firebase_storage"
             android:layout_width="match_parent"
             android:layout_height="48dp"

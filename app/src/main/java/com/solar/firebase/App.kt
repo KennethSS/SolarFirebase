@@ -1,11 +1,11 @@
-package com.solar.firebase.presentation
+package com.solar.firebase
 
 import android.app.Application
 import com.google.firebase.FirebaseApp
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.messaging.FirebaseMessaging
 
-class BaseApplication : Application() {
+class App : Application() {
   override fun onCreate() {
     super.onCreate()
     FirebaseApp.initializeApp(this)

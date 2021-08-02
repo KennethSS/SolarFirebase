@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/basefirebase" />
             <option value="$PROJECT_DIR$/crashlytics" />
+            <option value="$PROJECT_DIR$/firestore" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
