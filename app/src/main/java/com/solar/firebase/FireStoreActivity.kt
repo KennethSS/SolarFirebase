@@ -17,7 +17,7 @@ class FireStoreActivity : AppCompatActivity(R.layout.activity_fire_store) {
 
     write.setOnClickListener {
       FireStoreManager
-        .setDocument("collection 1", "document 1", sample()) {
+        .setDocument("collection 1", "document 1", sample2()) {
 
         }
     }
@@ -36,7 +36,14 @@ class FireStoreActivity : AppCompatActivity(R.layout.activity_fire_store) {
     }
   }
 
+  private fun sample2(): HashMap<String, Any> {
+    return hashMapOf(
+      "array" to List(10) { sample() }
+    )
+  }
+
   private fun sample(): HashMap<String, Any?> {
+
     return hashMapOf(
       "stringExample" to "Hello world!",
       "booleanExample" to true,
