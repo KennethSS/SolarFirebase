@@ -95,3 +95,41 @@ android {
 
 
 
+
+
+
+
+TypeSafe하게 FB 캐스팅 할 수 있는 방법을 찾아보자
+
+```kotlin
+inline fun <reified T> Map<String, Any>.trySafeTypeCasting(key: String) =
+	try {
+		when (this[key]) {
+			is String -> this as T
+			is String? -> this as? T
+			is Int -> this as T
+			is Int? -> this as? T
+			is Long -> this as T
+			is Long? -> this as? T
+			is Float -> this as T
+			is Float? -> this as? T
+			is Double -> this as T
+			is Double? -> this as? T
+			is Boolean -> this as T
+			is Boolean? -> this as? T
+			else -> throw ClassCastException()
+		}
+	} catch(e: ClassCastException) {
+		when (T::class) {
+			String::class -> ""
+			Int::class -> 0
+			Long::class -> 0L
+			Float::class -> 0.0f
+			Double::class -> 0.0
+			Boolean::class -> false
+			else -> { }
+		}
+	}
+
+```
+
