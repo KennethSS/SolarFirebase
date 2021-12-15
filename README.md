@@ -133,3 +133,14 @@ inline fun <reified T> Map<String, Any>.trySafeTypeCasting(key: String) =
 
 ```
 
+
+
+
+
+# Storage
+
+
+
+## Trouble Shootings
+
+- 이미지 이름이 한글로 들어 갔을 때 Glide를 이용하면 못찾는 경우가 생김 (가능하면 영어로)
