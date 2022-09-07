@@ -86,7 +86,7 @@ class LocationController(
     }
 
     private val locationCallback = object: LocationCallback() {
-        override fun onLocationResult(locationResult: LocationResult?) {
+        /*override fun onLocationResult(locationResult: LocationResult?) {
             locationResult ?: return
 
             if (locationResult.locations.size > 0) {
@@ -100,7 +100,7 @@ class LocationController(
 
         override fun onLocationAvailability(p0: LocationAvailability?) {
             super.onLocationAvailability(p0)
-        }
+        }*/
     }
 
     @RequiresPermission(allOf = [

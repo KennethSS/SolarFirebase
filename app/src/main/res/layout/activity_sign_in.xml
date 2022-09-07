@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  >
+
+  <data>
+
+    <variable
+      name="vm"
+      type="com.solar.firebase.auth.signin.SignInViewModel"
+      />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    >
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/id"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="120dp"
+      android:background="@drawable/bg_input_email"
+      android:hint="ID"
+      android:text="@={vm.email}"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/pw"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:background="@drawable/bg_input_email"
+      android:hint="PW"
+      android:text="@={vm.pw}"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/id"
+      />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+      android:id="@+id/checkAutoSignIn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      app:layout_constraintStart_toStartOf="@id/pw"
+      app:layout_constraintTop_toBottomOf="@id/pw"
+      />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="자동 로그인"
+      app:layout_constraintBottom_toBottomOf="@id/checkAutoSignIn"
+      app:layout_constraintStart_toEndOf="@id/checkAutoSignIn"
+      app:layout_constraintTop_toTopOf="@id/checkAutoSignIn"
+      />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btnSignIn"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:text="로그인"
+      android:onClick="@{ () -> vm.signIn() }"
+      app:layout_constraintTop_toBottomOf="@id/checkAutoSignIn"
+      />
+
+    <TextView
+      android:id="@+id/notYetTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:text="아직 가입하지 않으셨나요?"
+      app:layout_constraintEnd_toStartOf="@id/btnSignUp"
+      app:layout_constraintHorizontal_chainStyle="packed"
+      app:layout_constraintStart_toStartOf="@id/btnSignIn"
+      app:layout_constraintTop_toBottomOf="@id/btnSignIn"
+      />
+
+    <TextView
+      android:id="@+id/btnSignUp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="6dp"
+      android:text="회원가입"
+      android:textColor="@android:color/holo_blue_light"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="@id/notYetTitle"
+      app:layout_constraintEnd_toEndOf="@id/btnSignIn"
+      app:layout_constraintStart_toEndOf="@id/notYetTitle"
+      app:layout_constraintTop_toTopOf="@id/notYetTitle"
+      />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

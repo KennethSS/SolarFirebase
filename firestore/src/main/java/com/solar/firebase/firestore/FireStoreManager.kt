@@ -7,48 +7,50 @@ import com.google.firebase.ktx.Firebase
 
 object FireStoreManager {
 
+    fun add(
+        collection: String,
+        data: Any,
+    ) {
 
+        Firebase.firestore.collection(collection)
+            .add(data)
+            .addOnSuccessListener { documentReference ->
+                documentReference.id
+            }
+            .addOnFailureListener { exception ->
+            }
+    }
 
-  fun add(collection: String,
-          data: Any,
-  ) {
+    fun <T> read(collection: String) {
+        Firebase.firestore.collection(collection)
+            .get()
+            .addOnSuccessListener { result ->
+                result.forEach { document ->
+                    document.data
+                }
+            }
+    }
 
-    Firebase.firestore.collection(collection)
-      .add(data)
-      .addOnSuccessListener { documentReference ->
-        documentReference.id
-      }
-      .addOnFailureListener { exception ->
+    fun setDocument(collection: String, document: String, data: Any, onSuccess: () -> Unit, onError: (throwable: Throwable) -> Unit) {
+        Firebase.firestore.collection(collection).document(document)
+            .set(data, SetOptions.merge())
+            .addOnSuccessListener { onSuccess() }
+            .addOnFailureListener { exception -> onError(exception) }
+    }
 
-      }
-  }
-
-  fun <T>read(collection: String) {
-    Firebase.firestore.collection(collection)
-      .get()
-      .addOnSuccessListener { result ->
-        result.forEach { document ->
-          document.data
-        }
-      }
-  }
-
-  fun setDocument(collection: String, document: String, data: Any, onSuccess: () -> Unit) {
-    Firebase.firestore.collection(collection).document(document)
-      .set(data, SetOptions.merge())
-      .addOnSuccessListener { onSuccess() }
-      .addOnFailureListener { exception -> FireStoreResult.Error(exception) }
-  }
-
-  inline fun <reified T> readDocumentObject(collection: String, document: String, crossinline result: (FireStoreResult<T>) -> Unit) {
-    Firebase.firestore.collection(collection).document(document).get()
-      .addOnSuccessListener { documentSnapshot ->
-        val obj = documentSnapshot.toObject<T>()
-        obj?.let {
-          result(FireStoreResult.Success(obj))
-        }
-      }.addOnFailureListener { exception ->
-        result(FireStoreResult.Error(exception))
-      }
-  }
+    inline fun <reified T> readDocumentObject(
+        collection: String,
+        document: String,
+        crossinline result: (FireStoreResult<T>) -> Unit
+    ) {
+        Firebase.firestore.collection(collection).document(document).get()
+            .addOnSuccessListener { documentSnapshot ->
+                val obj = documentSnapshot.toObject<T>()
+                obj?.let {
+                    result(FireStoreResult.Success(obj))
+                }
+            }.addOnFailureListener { exception ->
+                result(FireStoreResult.Error(exception))
+            }
+    }
 }

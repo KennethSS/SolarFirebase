@@ -95,3 +95,10 @@ android {
 
 
 
+
+
+# FireStore
+
+- FireStore에서 ArrayList를 Set하면 list의 필드이름으로 아래 Value들이 들어감
+- FireStore에 Set을 할때 Any타입을 받지만 Map이나 커스텀 객체 밖에 안되는듯
+- 데이터를 toObject로 불러올 때는 Default 값이 설정되어 있어야함
