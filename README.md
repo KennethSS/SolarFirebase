@@ -102,3 +102,51 @@ android {
 - FireStore에서 ArrayList를 Set하면 list의 필드이름으로 아래 Value들이 들어감
 - FireStore에 Set을 할때 Any타입을 받지만 Map이나 커스텀 객체 밖에 안되는듯
 - 데이터를 toObject로 불러올 때는 Default 값이 설정되어 있어야함
+
+
+
+TypeSafe하게 FB 캐스팅 할 수 있는 방법을 찾아보자
+
+```kotlin
+inline fun <reified T> Map<String, Any>.trySafeTypeCasting(key: String) =
+	try {
+		when (this[key]) {
+			is String -> this as T
+			is String? -> this as? T
+			is Int -> this as T
+			is Int? -> this as? T
+			is Long -> this as T
+			is Long? -> this as? T
+			is Float -> this as T
+			is Float? -> this as? T
+			is Double -> this as T
+			is Double? -> this as? T
+			is Boolean -> this as T
+			is Boolean? -> this as? T
+			else -> throw ClassCastException()
+		}
+	} catch(e: ClassCastException) {
+		when (T::class) {
+			String::class -> ""
+			Int::class -> 0
+			Long::class -> 0L
+			Float::class -> 0.0f
+			Double::class -> 0.0
+			Boolean::class -> false
+			else -> { }
+		}
+	}
+
+```
+
+
+
+
+
+# Storage
+
+
+
+## Trouble Shootings
+
+- 이미지 이름이 한글로 들어 갔을 때 Glide를 이용하면 못찾는 경우가 생김 (가능하면 영어로)
