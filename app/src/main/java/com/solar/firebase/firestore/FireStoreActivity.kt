@@ -1,23 +1,31 @@
-package com.solar.firebase
+package com.solar.firebase.firestore
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.Timestamp
 import com.google.gson.annotations.SerializedName
-import com.solar.firebase.firestore.FireStoreManager
-import com.solar.firebase.firestore.FireStoreResult
-import kotlinx.android.synthetic.main.activity_fire_store.*
-import java.util.*
-import kotlin.collections.HashMap
+import com.solar.firebase.databinding.ActivityFireStoreBinding
+import com.solar.firebase.firestore.feed.detail.FeedDetailActivity
+import com.solar.firebase.firestore.feed.write.FeedWriteActivity
 
-class FireStoreActivity : AppCompatActivity(R.layout.activity_fire_store) {
+class FireStoreActivity : AppCompatActivity() {
+
+    private val binding by lazy { ActivityFireStoreBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+        binding.feedWrite.setOnClickListener { startActivity(Intent(this, FeedWriteActivity::class.java)) }
+        binding.feedDetail.setOnClickListener { startActivity(Intent(this, FeedDetailActivity::class.java)) }
+    }
+
+
+    /*override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
         write.setOnClickListener {
-            /*FireStoreManager
-                .setDocument("collection 1", "document 1", sample2())*/
+            *//*FireStoreManager
+                .setDocument("collection 1", "document 1", sample2())*//*
         }
 
         read.setOnClickListener {
@@ -41,7 +49,6 @@ class FireStoreActivity : AppCompatActivity(R.layout.activity_fire_store) {
     }
 
     private fun sample(): HashMap<String, Any?> {
-
         return hashMapOf(
             "stringExample" to "Hello world!",
             "booleanExample" to true,
@@ -50,7 +57,7 @@ class FireStoreActivity : AppCompatActivity(R.layout.activity_fire_store) {
             "listExample" to arrayListOf(1, 2, 3),
             "nullExample" to null
         )
-    }
+    }*/
 
     data class City(
         @SerializedName("name")

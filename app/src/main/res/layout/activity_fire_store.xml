@@ -24,4 +24,16 @@
     android:layout_height="wrap_content"
     android:text="read"/>
 
+  <Button
+    android:id="@+id/feedWrite"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="feedWrite"/>
+
+  <Button
+    android:id="@+id/feedDetail"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="feedDetail"/>
+
 </LinearLayout>

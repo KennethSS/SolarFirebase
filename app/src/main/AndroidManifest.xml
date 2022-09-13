@@ -88,10 +88,13 @@
           android:windowSoftInputMode="adjustResize" />
         <activity android:name=".storage.StorageActivity"/>
         <activity android:name=".crashlytics.CrashlyticsActivity"/>
-        <activity android:name=".FireStoreActivity"/>
+        <activity android:name=".firestore.FireStoreActivity"/>
 
         <service android:name=".storage.FileUploadService"/>
 
+
+        <activity android:name=".firestore.feed.detail.FeedDetailActivity"/>
+        <activity android:name=".firestore.feed.write.FeedWriteActivity"/>
 
         <!-- 인스턴스 ID 자동생성 방지-->
         <!--<meta-data

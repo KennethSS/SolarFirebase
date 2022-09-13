@@ -3,7 +3,7 @@ package com.solar.firebase.presentation
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.solar.firebase.FireStoreActivity
+import com.solar.firebase.firestore.FireStoreActivity
 import com.solar.firebase.R
 
 import com.solar.firebase.auth.AuthActivity

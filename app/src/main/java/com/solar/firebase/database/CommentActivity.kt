@@ -86,7 +86,7 @@ class CommentActivity : BaseActivity() {
         }
 
 
-        loadCommentList("comments", 50)
+        //loadCommentList("comments", 50)
 
         //FirebaseDatabase.getInstance().getReference()
     }
@@ -118,7 +118,7 @@ class CommentActivity : BaseActivity() {
     }
 
 
-    private fun loadCommentList(reference: String, limit: Int) {
+    /*private fun loadCommentList(reference: String, limit: Int) {
         val query = FirebaseDatabase.getInstance()
                 .reference
                 .child(reference)
@@ -134,5 +134,5 @@ class CommentActivity : BaseActivity() {
         }
 
         database_list_view.adapter = adapter
-    }
+    }*/
 }

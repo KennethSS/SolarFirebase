@@ -1,4 +1,4 @@
-package com.solar.firebase
+package com.solar.firebase.firestore
 
 sealed class FireStoreUiState {
     object SuccessWrite : FireStoreUiState()

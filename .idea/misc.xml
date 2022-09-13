@@ -6,8 +6,13 @@
         <entry key="app/src/main/res/drawable/bg_input_email.xml" value="0.1515" />
         <entry key="app/src/main/res/drawable/bg_login_button.xml" value="0.1515" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.15577507598784193" />
+        <entry key="app/src/main/res/layout/activity_feed.xml" value="0.46603260869565216" />
+        <entry key="app/src/main/res/layout/activity_feed_detail.xml" value="0.42358078602620086" />
+        <entry key="app/src/main/res/layout/activity_fire_store.xml" value="0.4692028985507246" />
+        <entry key="app/src/main/res/layout/activity_firebase_database.xml" value="0.33125" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.28298187255859375" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/item_comment.xml" value="0.5" />
       </map>
     </option>
   </component>
