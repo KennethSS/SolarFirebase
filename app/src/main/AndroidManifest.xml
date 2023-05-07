@@ -93,9 +93,23 @@
         <service android:name=".storage.FileUploadService"/>
 
 
+        <activity android:name=".firestore.notice.NoticeDetailActivity"/>
+        <activity android:name=".firestore.notice.NoticeListActivity"/>
+        <activity android:name=".firestore.notice.NoticeWriteActivity"/>
         <activity android:name=".firestore.feed.detail.FeedDetailActivity"/>
         <activity android:name=".firestore.feed.write.FeedWriteActivity"/>
+        <activity android:name=".firestore.chat.ChatActivity"/>
+        <activity android:name=".firestore.chatlist.ChatListActivity"/>
+        <activity android:name=".fcm.MessageActivity"/>
 
+        <service
+          android:name=".fcm.AppFirebaseMessagingService"
+          android:exported="false">
+
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <!-- 인스턴스 ID 자동생성 방지-->
         <!--<meta-data
             android:name="firebase_messaging_auto_init_enabled"

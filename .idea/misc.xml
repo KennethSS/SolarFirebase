@@ -3,16 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_chat_input.xml" value="0.3275" />
         <entry key="app/src/main/res/drawable/bg_input_email.xml" value="0.1515" />
         <entry key="app/src/main/res/drawable/bg_login_button.xml" value="0.1515" />
+        <entry key="app/src/main/res/drawable/ic_baseline_disabled_by_default_24.xml" value="0.335" />
+        <entry key="app/src/main/res/drawable/ic_outline_camera_alt_24.xml" value="0.243" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.15577507598784193" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_chat_list.xml" value="0.6552083333333333" />
         <entry key="app/src/main/res/layout/activity_feed.xml" value="0.46603260869565216" />
         <entry key="app/src/main/res/layout/activity_feed_detail.xml" value="0.42358078602620086" />
-        <entry key="app/src/main/res/layout/activity_fire_store.xml" value="0.4692028985507246" />
+        <entry key="app/src/main/res/layout/activity_fire_store.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_firebase_database.xml" value="0.33125" />
+        <entry key="app/src/main/res/layout/activity_notice.xml" value="0.6435897435897436" />
+        <entry key="app/src/main/res/layout/activity_notice_list.xml" value="0.5271132376395534" />
+        <entry key="app/src/main/res/layout/activity_notice_write.xml" value="0.6536458333333334" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.28298187255859375" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_storage.xml" value="0.5056497175141242" />
+        <entry key="app/src/main/res/layout/item_chat.xml" value="0.36633663366336633" />
+        <entry key="app/src/main/res/layout/item_chat_me.xml" value="0.65625" />
         <entry key="app/src/main/res/layout/item_comment.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item_notice.xml" value="0.6536458333333334" />
       </map>
     </option>
   </component>

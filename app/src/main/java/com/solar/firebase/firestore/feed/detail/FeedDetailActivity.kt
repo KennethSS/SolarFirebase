@@ -3,6 +3,7 @@ package com.solar.firebase.firestore.feed.detail
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.sample.basefirebase.storage.image.setStorageImage
 import com.solar.firebase.databinding.ActivityFeedDetailBinding
 import com.solar.firebase.firestore.feed.comment.CommentAdapter
 import com.solar.firebase.firestore.feed.comment.CommentState
@@ -29,6 +30,7 @@ class FeedDetailActivity : AppCompatActivity() {
         observeViewModel(commentViewModel.commentsStateFlow) { state ->
             when (state) {
                 is CommentState.Success -> {
+                    binding.picture.setStorageImage("Feeds/ef421cb2-c739-4c95-931d-e00f95001f17")
                     binding.commentListView.adapter = CommentAdapter(state.comments)
                 }
             }

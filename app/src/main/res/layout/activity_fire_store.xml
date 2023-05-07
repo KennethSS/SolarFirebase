@@ -36,4 +36,32 @@
     android:layout_height="wrap_content"
     android:text="feedDetail"/>
 
+  <Button
+    android:id="@+id/chatActivity"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Chat"/>
+
+  <Button
+    android:id="@+id/chatListActivity"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="ChatList"/>
+  <Button
+    android:id="@+id/noticeList"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Notice List"/>
+
+  <Button
+    android:id="@+id/noticeDetail"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Notice Detail"/>
+
+  <Button
+    android:id="@+id/writeNotice"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Notice Write"/>
 </LinearLayout>

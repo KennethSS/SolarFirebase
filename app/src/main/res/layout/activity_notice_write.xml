@@ -1,0 +1,52 @@
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  >
+
+  <data>
+
+    <variable
+      name="vm"
+      type="com.solar.firebase.firestore.notice.NoticeWriteViewModel"
+      />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    >
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/bg_input_email"
+      android:hint="제목"
+      android:text="@={vm.title}"
+      />
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/content"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginBottom="16dp"
+      android:background="@drawable/bg_input_email"
+      android:hint="내용"
+      android:text="@={vm.content}"
+      app:layout_constraintBottom_toTopOf="@id/confirm"
+      app:layout_constraintTop_toBottomOf="@id/title"
+      />
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/confirm"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="등록하기"
+      android:onClick="@{ () -> vm.register()}"
+      app:layout_constraintBottom_toBottomOf="parent"
+      />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

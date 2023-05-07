@@ -31,17 +31,14 @@ class StorageActivity : BindingActivity() {
         binding.storageImg.setStorageImage("SubFolder1/34.jpg")
         binding.setCurrentImg.setOnClickListener { getImage() }
         binding.upload.setOnClickListener {
-
-
-
-            startService(Intent(this, FileUploadService::class.java).apply {
-                putExtra("reference", "test")
-                putExtra("uri", uri!!)
-            })
+            startService(
+                Intent(this, FileUploadService::class.java).apply {
+                    putExtra("reference", "test")
+                    putExtra("uri", uri!!)
+                }
+            )
         }
     }
-
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -52,8 +49,8 @@ class StorageActivity : BindingActivity() {
                 if (images.isNotEmpty()) {
                     this.uri = images[0]
                     Glide.with(binding.storageImg)
-                            .load(images[0])
-                            .into(binding.storageImg)
+                        .load(images[0])
+                        .into(binding.storageImg)
                 }
             }
         }
@@ -61,29 +58,28 @@ class StorageActivity : BindingActivity() {
 
     private fun getImage() {
         TedPermission.with(this)
-                .setPermissionListener(object: PermissionListener {
-                    override fun onPermissionGranted() {
-                        Matisse.from(this@StorageActivity)
-                                .choose(MimeType.ofImage())
-                                .countable(true)
-                                .maxSelectable(1)
-                                //.addFilter(GifSizeFilter(320, 320, 5 * Filter.K * Filter.K))
-                                //.gridExpectedSize(resources.getDimensionPixelSize(R.dimen.grid_expected_size))
-                                .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
-                                .thumbnailScale(0.85f)
-                                .imageEngine(GlideEngine())
-                                //.showPreview(false) // Default is `true
-                                .theme(R.style.Matisse_Dracula)
-                                .forResult(0)
-                    }
+            .setPermissionListener(object : PermissionListener {
+                override fun onPermissionGranted() {
+                    Matisse.from(this@StorageActivity)
+                        .choose(MimeType.ofImage())
+                        .countable(true)
+                        .maxSelectable(1)
+                        // .addFilter(GifSizeFilter(320, 320, 5 * Filter.K * Filter.K))
+                        // .gridExpectedSize(resources.getDimensionPixelSize(R.dimen.grid_expected_size))
+                        .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
+                        .thumbnailScale(0.85f)
+                        .imageEngine(GlideEngine())
+                        // .showPreview(false) // Default is `true
+                        .theme(R.style.Matisse_Dracula)
+                        .forResult(0)
+                }
 
-                    override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
-
-                    }
-
-                })
-                .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
-                .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE)
-                .check()
+                override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+                }
+            })
+            .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
+            .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE)
+            .check()
     }
 }
+//https://stackoverflow.com/questions/62209022/firebase-storagereference-getfile-is-not-working-firebasestorage-android

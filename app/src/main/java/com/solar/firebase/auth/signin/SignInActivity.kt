@@ -19,6 +19,7 @@ class SignInActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.vm = signInViewModel
+        binding.lifecycleOwner = this
         binding.btnSignUp.setOnClickListener { startActivity(Intent(this, SignUpActivity::class.java)) }
         lifecycleScope.launchWhenStarted {
             signInViewModel.signInUiState.collect { state ->
@@ -33,4 +34,5 @@ class SignInActivity : BaseActivity() {
             }
         }
     }
+
 }

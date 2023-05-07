@@ -36,6 +36,25 @@
       app:layout_constraintTop_toBottomOf="@id/title"
       />
 
+    <ImageView
+      android:id="@+id/picture"
+      android:layout_width="match_parent"
+      android:layout_height="240dp"
+      android:visibility="gone"
+      app:layout_constraintTop_toBottomOf="@+id/title"
+      />
+
+    <ImageView
+      android:id="@+id/pictureClose"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="6dp"
+      android:visibility="gone"
+      android:src="@drawable/ic_baseline_disabled_by_default_24"
+      app:layout_constraintEnd_toEndOf="@id/picture"
+      app:layout_constraintTop_toTopOf="@id/picture"
+      />
+
     <androidx.appcompat.widget.AppCompatEditText
       android:id="@+id/content"
       android:layout_width="match_parent"
@@ -43,17 +62,35 @@
       android:background="@null"
       android:hint="내용"
       android:text="@={vm.content}"
-      app:layout_constraintBottom_toTopOf="@id/register"
-      app:layout_constraintTop_toBottomOf="@id/title"
+      app:layout_constraintBottom_toTopOf="@id/optionsContainer"
+      app:layout_constraintTop_toBottomOf="@id/picture"
       />
+
+    <LinearLayout
+      android:id="@+id/optionsContainer"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintTop_toBottomOf="@id/content"
+      >
+
+      <ImageView
+        android:id="@+id/camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:src="@drawable/ic_outline_camera_alt_24"
+        />
+    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
       android:id="@+id/register"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="등록하기"
       android:onClick="@{ () -> vm.register()}"
+      android:text="등록하기"
       app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/optionsContainer"
       />
   </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

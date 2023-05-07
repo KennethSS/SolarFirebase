@@ -28,6 +28,9 @@ class AppFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onMessageReceived(p0: RemoteMessage) {
         super.onMessageReceived(p0)
-        Log.d("AppFirebaseMessagingService", "onMessageReceived")
+        Log.d("AppFirebaseMessagingService", "onMessageReceived ${p0}")
+        Log.d("AppFirebaseMessagingService", "onMessageReceived ${p0.data.get("story_id")}")
+        Log.d("AppFirebaseMessagingService", "onMessageReceived ${p0.notification?.title}")
+        Log.d("AppFirebaseMessagingService", "onMessageReceived ${p0.notification?.body}")
     }
 }

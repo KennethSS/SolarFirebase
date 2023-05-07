@@ -15,7 +15,6 @@ import androidx.core.app.NotificationManagerCompat
 import com.sample.basefirebase.storage.FirebaseStorageManager
 import com.solar.firebase.presentation.MainActivity
 
-
 /**
  *  Created by Kenneth on 12/22/20
  */
@@ -28,7 +27,7 @@ class FileUploadService : Service() {
         intent?.let {
             val ref = intent.getStringExtra("reference")
             val uri = intent.getParcelableExtra<Uri>("uri")
-            if (ref != null  && uri != null) {
+            if (ref != null && uri != null) {
                 startForeground(ref, uri)
             }
         }
@@ -38,38 +37,38 @@ class FileUploadService : Service() {
     private fun startForeground(ref: String, uri: Uri) {
         val builder = if (Build.VERSION.SDK_INT >= 26) {
             val CHANNEL_ID = "snwodeer_service_channel"
-            val channel = NotificationChannel(CHANNEL_ID,
-                    "SnowDeer Service Channel",
-                    NotificationManager.IMPORTANCE_DEFAULT)
+            val channel = NotificationChannel(
+                CHANNEL_ID,
+                "SnowDeer Service Channel",
+                NotificationManager.IMPORTANCE_DEFAULT
+            )
             (getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager)
-                    .createNotificationChannel(channel)
+                .createNotificationChannel(channel)
             NotificationCompat.Builder(this, CHANNEL_ID)
         } else {
             NotificationCompat.Builder(this)
         }
 
-
         val pendingIntent: PendingIntent =
-                Intent(this, MainActivity::class.java).let { notificationIntent ->
-                    PendingIntent.getActivity(this, 0, notificationIntent, 0)
-                }
+            Intent(this, MainActivity::class.java).let { notificationIntent ->
+                PendingIntent.getActivity(this, 0, notificationIntent, 0)
+            }
 
         val notification = builder
-                .setProgress(PROGRESS_MAX, PROGRESS_CURRENT, false)
-                .setContentTitle("Store to $ref")
-                .setContentText("Uploading..")
-                .setSmallIcon(com.solar.firebase.R.mipmap.ic_launcher)
-                .setContentIntent(pendingIntent)
+            .setProgress(PROGRESS_MAX, PROGRESS_CURRENT, false)
+            .setContentTitle("Store to $ref")
+            .setContentText("Uploading..")
+            .setSmallIcon(com.solar.firebase.R.mipmap.ic_launcher)
+            .setContentIntent(pendingIntent)
 
         NotificationManagerCompat.from(this).apply {
             builder.setProgress(PROGRESS_MAX, PROGRESS_CURRENT, false)
             builder.setAutoCancel(true)
             notify(10, builder.build())
 
-            FirebaseStorageManager.upload(ref, uri,  {
-
+            FirebaseStorageManager.upload(ref, uri, {
             }, {
-                Log.d(TAG, "progress:${it}")
+                Log.d(TAG, "progress:$it")
                 if (it.toInt() == 100) {
                     stopForeground(true)
                 } else {

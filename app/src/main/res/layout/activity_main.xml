@@ -65,5 +65,11 @@
             android:layout_height="48dp"
             android:gravity="center"
             android:text="Crashlytics"/>
+        <TextView
+          android:id="@+id/fcm"
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          android:gravity="center"
+          android:text="Firebase Message"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

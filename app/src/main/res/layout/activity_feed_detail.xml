@@ -34,6 +34,11 @@
       tools:text="제목"
       />
 
+    <ImageView
+      android:id="@+id/picture"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/title"/>
     <com.google.android.material.textview.MaterialTextView
       android:id="@+id/nickname"
       style="@style/TextAppearance.Material3.BodySmall"
@@ -41,7 +46,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="6dp"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/title"
+      app:layout_constraintTop_toBottomOf="@id/picture"
       tools:text="제목"
       />
 

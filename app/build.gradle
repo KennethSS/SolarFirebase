@@ -80,6 +80,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore-ktx'
     implementation 'com.google.firebase:firebase-messaging:23.0.1'
 
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
 
     // Declare the dependencies for the Crashlytics and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
@@ -106,6 +107,14 @@ dependencies {
     implementation 'com.zhihu.android:matisse:0.5.3-beta3'
     implementation 'gun0912.ted:tedpermission:2.2.3'
 
+    def version = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$version"
+    implementation "com.squareup.retrofit2:converter-moshi:$version"
+
+    def okHttpVersion = "5.0.0-alpha.2"
+    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+
     implementation project(':basefirebase')
 
     implementation 'com.github.KennethSS:SolarBinding:1.0.1'
@@ -113,5 +122,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.google.api-client:google-api-client:1.32.2'
+    implementation 'com.google.apis:google-api-services-androidpublisher:v3-rev22-1.25.0'
+    implementation 'com.google.android.gms:play-services-drive:17.0.0'
+    implementation 'com.google.auth:google-auth-library-oauth2-http:1.2.2'
 }
 

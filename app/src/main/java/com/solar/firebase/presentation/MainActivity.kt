@@ -9,6 +9,7 @@ import com.solar.firebase.R
 import com.solar.firebase.auth.AuthActivity
 import com.solar.firebase.crashlytics.CrashlyticsActivity
 import com.solar.firebase.database.CommentActivity
+import com.solar.firebase.fcm.MessageActivity
 import com.solar.firebase.storage.StorageActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -42,6 +43,9 @@ class MainActivity : AppCompatActivity() {
 
         crashlytics.setOnClickListener {
             startActivity(Intent(this, CrashlyticsActivity::class.java))
+        }
+        fcm.setOnClickListener {
+            startActivity(Intent(this, MessageActivity::class.java))
         }
     }
 }
